@@ -13,16 +13,20 @@ public class Main {
         System.out.print("Enter (1) for artist search. Enter (2) for title keyword. Enter (3) for list: ");
 
         int search  = scan.nextInt();
+        scan.nextLine();
 Inventory inv = new Inventory();
         if (search == 1) {
             System.out.print("Enter artist name: ");
-                inv.findByArtist(scan);
+               Album ans = inv.findByArtist(scan);
+            System.out.println(ans);
+
 
         }else if (search == 2) {
 
             System.out.println("Enter title keyword: ");
-            inv.findByTitle(scan);
+            Album ans = inv.findByTitle(scan);
 
+            System.out.print(ans);
         }else{
             System.out.println(inv.getAlbumInv());
         }

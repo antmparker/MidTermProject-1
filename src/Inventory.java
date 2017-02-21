@@ -9,6 +9,7 @@ public class Inventory {
 
     public Inventory() {
         albumInv = new ArrayList<Album>();
+        //Album album = new Album();
 
         albumInv.add(new Album("Michael Jackson", "Thriller"));
         albumInv.add(new Album("Nelly Furtado", "Loose"));
@@ -24,45 +25,61 @@ public class Inventory {
         albumInv.add(new Album("David Guetta", "Listen"));
     }
 
-    public ArrayList<Album> getAlbumInv() {
-        return albumInv;
+    public String getAlbumInv() {
+        String output = "";
+
+        for (Album a : albumInv){
+            //System.out.println(output + a.toString() + "\n";
+            output = output + a.toString() + "\n";
+    }
+
+        return output;
     }
 
     public Album getAlbum(int index) {
         return albumInv.get(index);
 
     }
-    public Album findByArtist (Scanner artist) {
+    public Album findByArtist (Scanner scan ) {
         boolean found = false;
-        String artistName = artist.nextLine();
+            String artistName = scan.nextLine();
+            Album album = null;
+            for (int i = 0; !found && i < albumInv.size(); i++) {
+                if (artistName.equals(albumInv.get(i).getArtist())) {
+                    found = true;
+                    album = albumInv.get(i);
+                }
+            }
+            // let user know that name wasn't on the list
+            if (!found) {
+                System.out.println("Sorry we don't have that artist.");
+            }
+            return album;
+
+
+
+
+
+    }
+
+    public Album findByTitle (Scanner scan) {
+        boolean found = false;
+        String albumTitle = scan.nextLine();
         Album album = null;
         for (int i = 0; !found && i < albumInv.size(); i++) {
-            if (artist.equals(albumInv.get(i))) {
+            if (albumTitle.equals(albumInv.get(i).getTitle())) {
                 found = true;
                 album = albumInv.get(i);
             }
         }
-        // let user know that name wasn't on the list
+
         if (!found) {
-            System.out.println("Sorry we don't have that artist.");
+            System.out.println("Sorry we don't have that title.");
         }
         return album;
+
+
     }
-    public Album findByTitle (Scanner title) {
-        boolean found = false;
-        String artistName = title.nextLine();
-        Album album = null;
-        for (int i = 0; !found && i < albumInv.size(); i++) {
-            if (title.equals(albumInv.get(i))) {
-                found = true;
-                album = albumInv.get(i);
-            }
-        }
-        // let user know that name wasn't on the list
-        if (!found) {
-            System.out.println("Sorry we don't have that album title.");
-        }
-        return album;
-    }
+
 
 }

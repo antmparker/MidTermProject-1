@@ -18,7 +18,7 @@ public class Album {
         public Album (String artist, String title) {
             this.artist = artist;
             this.title = title;
-            this.status = status;
+            //this.status = status;
 
         }
 
@@ -55,7 +55,12 @@ public class Album {
         }
         //toString
         public String toString () {
-            return artist + title + status;
+
+            String stat = "On shelf";
+                if (status ){
+                    stat = "Checked Out ";
+                }
+            return artist +" "+ title + " " + stat;
         }
     }
 
