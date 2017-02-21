@@ -35,17 +35,34 @@ public class Inventory {
     public Album findByArtist (Scanner artist) {
         boolean found = false;
         String artistName = artist.nextLine();
+        Album album = null;
         for (int i = 0; !found && i < albumInv.size(); i++) {
             if (artist.equals(albumInv.get(i))) {
                 found = true;
-                artistName = albumInv.get(i);
+                album = albumInv.get(i);
             }
         }
         // let user know that name wasn't on the list
         if (!found) {
             System.out.println("Sorry we don't have that artist.");
         }
-        return artistName;
+        return album;
+    }
+    public Album findByTitle (Scanner title) {
+        boolean found = false;
+        String artistName = title.nextLine();
+        Album album = null;
+        for (int i = 0; !found && i < albumInv.size(); i++) {
+            if (title.equals(albumInv.get(i))) {
+                found = true;
+                album = albumInv.get(i);
+            }
+        }
+        // let user know that name wasn't on the list
+        if (!found) {
+            System.out.println("Sorry we don't have that album title.");
+        }
+        return album;
     }
 
 }

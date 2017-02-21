@@ -8,37 +8,39 @@ public class Menu {
 
     //method to find by Artist
     public Album findByArtist (Scanner artist) {
-        artist = artist.nextLine();
-        boolean found= false;
+        boolean found = false;
+        String artistName = artist.nextLine();
+        Album album = null;
         for (int i = 0; !found && i < albumInv.size(); i++) {
             if (artist.equals(albumInv.get(i))) {
-                boolean found = true;
-                artist = albumInv.get(i);
+                found = true;
+                album = albumInv.get(i);
             }
         }
         // let user know that name wasn't on the list
         if (!found) {
             System.out.println("Sorry we don't have that artist.");
         }
-        return artist;
+        return album;
     }
 
-////find by title
-//    public static Album findByTitle (Scanner title) {
-//        boolean found = false;
-//        Album album;
-//        album = title.next()
-//        for (int i = 0; !found && i < albumInv.size(); i++) {
-//            if (title.equals(albumInv.get(i))) {
-//                found = true;
-//                title = albumInv.get(i);
-//            }
-//        }
-//        if (!found) {
-//            System.out.println("Sorry we don't have that artist.");
-//        }
-//        return album;
-//    }
+//find by title
+        public Album findByTitle (Scanner title) {
+            boolean found = false;
+            String artistName = artist.nextLine();
+            Album album = null;
+            for (int i = 0; !found && i < albumInv.size(); i++) {
+                if (artist.equals(albumInv.get(i))) {
+                    found = true;
+                    album = albumInv.get(i);
+                }
+            }
+            // let user know that name wasn't on the list
+            if (!found) {
+                System.out.println("Sorry we don't have that album title.");
+            }
+            return album;
+        }
     //displayInventory
     public static ArrayList displayInventory (ArrayList inventory){
 
