@@ -23,6 +23,7 @@ public class Validator {
             if (sc.hasNextInt()) {
                 i = sc.nextInt();
                 isValid = true;
+                
             }
             else {
                 System.out.println("Error! Invalid integer value. Try again.");
