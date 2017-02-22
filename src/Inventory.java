@@ -23,6 +23,7 @@ public class Inventory {
         albumInv.add(new Album("Aretha Franklin", "Respect"));
         albumInv.add(new Album("Pitbull", "Globalization"));
         albumInv.add(new Album("David Guetta", "Listen"));
+
     }
 
     public String getAlbumInv() {
@@ -50,6 +51,7 @@ public class Inventory {
             if (artistName.equalsIgnoreCase(albumInv.get(i).getArtist())) {
                 found = true;
                 album = albumInv.get(i);
+                album.setIndex(i);
             }
         }
         // let user know that name wasn't on the list
@@ -69,6 +71,7 @@ public class Inventory {
             if (albumTitle.equalsIgnoreCase(albumInv.get(i).getTitle())) {
                 found = true;
                 album = albumInv.get(i);
+                album.setIndex(i);
             }
         }
 

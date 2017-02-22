@@ -7,6 +7,15 @@ public class Album {
     private String artist;
     private String title;
     private boolean status;
+    private int index;
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 
     public Album() {
 
@@ -66,7 +75,7 @@ public class Album {
             stat = ": is checked out";
         }
 
-        return artist + " " + title + " " + stat;
+        return  artist + " " + title + " " + stat;
 
     }
 

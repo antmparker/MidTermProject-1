@@ -17,10 +17,11 @@ public class Main {
             int search  = scan.nextInt();
             scan.nextLine();
             Inventory inv = new Inventory();
+            //for (int i = 0;i < ;i++)
             if (search == 1) {
                 System.out.print("Enter artist name: ");
                    Album ans = inv.findByArtist(scan);
-                System.out.println(ans);
+                System.out.println((ans.getIndex() + 1) +": "+ ans.toString());
 
 
             }else if (search == 2) {
@@ -28,7 +29,7 @@ public class Main {
                 System.out.println("Enter title keyword: ");
                 Album ans = inv.findByTitle(scan);
 
-                System.out.print(ans);
+                System.out.println((ans.getIndex() + 1) +": "+ ans.toString());
             }else{
                 System.out.println(inv.getAlbumInv());
             }
