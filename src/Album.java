@@ -61,9 +61,9 @@ public class Album {
     //toString
     public String toString() {
 
-        String stat = "On shelf";
+        String stat = ": is on shelf";
         if (status) {
-            stat = "Checked Out ";
+            stat = ": is checked out";
         }
         return artist + " " + title + " " + stat;
     }

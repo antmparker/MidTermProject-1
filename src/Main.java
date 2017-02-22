@@ -6,9 +6,10 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+        System.out.println("Welcome to the Grand Circus CD Rental");
+        System.out.println();
 
         do {
-            System.out.println("Welcome to the Grand Circus CD Rental");
             System.out.println();
             System.out.println("How do you want to search for CD?");
             System.out.print("Enter (1) for artist search. Enter (2) for title keyword. Enter (3) for list: ");
