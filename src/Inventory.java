@@ -23,15 +23,17 @@ public class Inventory {
         albumInv.add(new Album("Aretha Franklin", "Respect"));
         albumInv.add(new Album("Pitbull", "Globalization"));
         albumInv.add(new Album("David Guetta", "Listen"));
+
     }
 
     public String getAlbumInv() {
         String output = "";
+        int count = 1;
+        for (Album a : albumInv) {
 
-        for (Album a : albumInv){
-            //System.out.println(output + a.toString() + "\n";
-            output = output + a.toString() + "\n";
-    }
+            output = output + count + ": " + a.toString() + "\n";
+            count++;
+        }
 
         return output;
     }
@@ -40,36 +42,36 @@ public class Inventory {
         return albumInv.get(index);
 
     }
-    public Album findByArtist (Scanner scan ) {
+
+    public Album findByArtist(Scanner scan) {
         boolean found = false;
-            String artistName = scan.nextLine();
-            Album album = null;
-            for (int i = 0; !found && i < albumInv.size(); i++) {
-                if (artistName.equals(albumInv.get(i).getArtist())) {
-                    found = true;
-                    album = albumInv.get(i);
-                }
+        String artistName = scan.nextLine();
+        Album album = null;
+        for (int i = 0; !found && i < albumInv.size(); i++) {
+            if (artistName.equalsIgnoreCase(albumInv.get(i).getArtist())) {
+                found = true;
+                album = albumInv.get(i);
+                album.setIndex(i);
             }
-            // let user know that name wasn't on the list
-            if (!found) {
-                System.out.println("Sorry we don't have that artist.");
-            }
-            return album;
-
-
-
+        }
+        // let user know that name wasn't on the list
+        if (!found) {
+            System.out.println("Sorry we don't have that artist.");
+        }
+        return album;
 
 
     }
 
-    public Album findByTitle (Scanner scan) {
+    public Album findByTitle(Scanner scan) {
         boolean found = false;
         String albumTitle = scan.nextLine();
         Album album = null;
         for (int i = 0; !found && i < albumInv.size(); i++) {
-            if (albumTitle.equals(albumInv.get(i).getTitle())) {
+            if (albumTitle.equalsIgnoreCase(albumInv.get(i).getTitle())) {
                 found = true;
                 album = albumInv.get(i);
+                album.setIndex(i);
             }
         }
 
