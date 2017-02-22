@@ -35,19 +35,19 @@ public class Main {
             //allows user to select an item to checkout or return
             System.out.println("Select the album you want to checkout or return.");
             int index = scan.nextInt();
-            System.out.println(inv.getAlbum(index));
-            int selectedItem = index;
+            System.out.println(inv.getAlbum(index - 1 ) );
+            int selectedItem = index -1;
 
 
             System.out.println("Enter (1) to checkout. Enter (2) to return.");
             int find = scan.nextInt();
             if (find == 1) {
                 inv.getAlbum(selectedItem).setStatus(true);
-                System.out.println(inv.getAlbum(selectedItem));
+                System.out.println(inv.getAlbum(selectedItem  ));
 
             }else if (find == 2){
                 inv.getAlbum(selectedItem).setStatus(false);
-                System.out.println(inv.getAlbum(selectedItem));
+                System.out.println(inv.getAlbum(selectedItem  ));
             }
         } while (true);
 

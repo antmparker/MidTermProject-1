@@ -65,7 +65,9 @@ public class Album {
         if (status) {
             stat = ": is checked out";
         }
+
         return artist + " " + title + " " + stat;
+
     }
 
     public boolean checkOut(Scanner scan) {
