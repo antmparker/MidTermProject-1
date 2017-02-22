@@ -45,7 +45,7 @@ public class Main {
             int selectedItem = index - 1;
 
 
-            System.out.println("Enter (1) to checkout. Enter (2) to return.");
+            System.out.println("Enter (1) to checkout. Enter (2) to return. ");
             int find = scan.nextInt();
             if (find == 1) {
                 inv.getAlbum(selectedItem).setStatus(true);
