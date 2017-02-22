@@ -45,7 +45,7 @@ public class Inventory {
             String artistName = scan.nextLine();
             Album album = null;
             for (int i = 0; !found && i < albumInv.size(); i++) {
-                if (artistName.equals(albumInv.get(i).getArtist())) {
+                if (artistName.equalsIgnoreCase(albumInv.get(i).getArtist())) {
                     found = true;
                     album = albumInv.get(i);
                 }
@@ -67,7 +67,7 @@ public class Inventory {
         String albumTitle = scan.nextLine();
         Album album = null;
         for (int i = 0; !found && i < albumInv.size(); i++) {
-            if (albumTitle.equals(albumInv.get(i).getTitle())) {
+            if (albumTitle.equalsIgnoreCase(albumInv.get(i).getTitle())) {
                 found = true;
                 album = albumInv.get(i);
             }
