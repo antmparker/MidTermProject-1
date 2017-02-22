@@ -13,10 +13,11 @@ public class Main {
         do {
             System.out.println();
             System.out.println("How do you want to search for CD?");
-            System.out.print("Enter (1) for artist search. Enter (2) for title keyword. Enter (3) for list: ");
+            //System.out.print("Enter (1) for artist search. Enter (2) for title keyword. Enter (3) for list: ");
 
-            int search = scan.nextInt();
-            scan.nextLine();
+            int search;
+            search = Validator.getInt(scan, "Enter (1) for artist search. Enter (2) for title keyword. Enter (3) for list: ",
+                    1, 3);
             Inventory inv = new Inventory();
 
             if (search == 1) {
@@ -39,14 +40,14 @@ public class Main {
                 System.out.println(inv.getAlbumInv());
             }
             //allows user to select an item to checkout or return
-            System.out.print("Select the album you want to checkout or return. ");
-            int index = scan.nextInt();
+            int index = Validator.getInt(scan, "Select the album you want to checkout or return. ",
+                    1, 12);
             System.out.println(inv.getAlbum(index - 1));
             int selectedItem = index - 1;
 
 
-            System.out.println("Enter (1) to checkout. Enter (2) to return. ");
-            int find = scan.nextInt();
+
+            int find = Validator.getInt(scan, "Enter (1) to checkout. Enter (2) to return. ", 1, 2);
             if (find == 1) {
                 inv.getAlbum(selectedItem).setStatus(true);
                 System.out.println(inv.getAlbum(selectedItem));

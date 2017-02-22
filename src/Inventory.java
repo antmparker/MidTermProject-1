@@ -66,7 +66,8 @@ public class Inventory {
 
     public Album findByTitle(Scanner scan) {
         boolean found = false;
-        String albumTitle = scan.nextLine();
+        String albumTitle = Validator.getString(scan ,"Enter title keyword: ");
+
         Album album = null;
         for (int i = 0; !found && i < albumInv.size(); i++) {
             if (albumTitle.equalsIgnoreCase(albumInv.get(i).getTitle())) {

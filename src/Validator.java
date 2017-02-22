@@ -39,9 +39,9 @@ public class Validator {
         boolean isValid = false;//this verifies if statement is false
         while (isValid == false) {//loop to repeatedly prompt the user to get the interger
             i = getInt(sc, prompt);
-            if (i < 1) {
+            if (i < min) {
                 System.out.println("Number must be " + min + " or greater.");//Sout validate using string method
-            }else if  (i > 12) {
+            }else if  (i > max) {
                 System.out.println("Number must be " + max + " or less.");
             }else
                 isValid = true;
