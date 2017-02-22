@@ -9,7 +9,7 @@ public class Inventory {
 
     public Inventory() {
         albumInv = new ArrayList<Album>();
-        //Album album = new Album();
+
 
         albumInv.add(new Album("Michael Jackson", "Thriller"));
         albumInv.add(new Album("Nelly Furtado", "Loose"));
@@ -58,6 +58,7 @@ public class Inventory {
         if (!found) {
             System.out.println("Sorry we don't have that artist.");
         }
+
         return album;
 
 

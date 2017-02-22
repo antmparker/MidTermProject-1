@@ -75,7 +75,7 @@ public class Album {
             stat = ": is checked out";
         }
 
-        return  artist + " " + title + " " + stat;
+        return artist + " " + title + " " + stat;
 
     }
 
