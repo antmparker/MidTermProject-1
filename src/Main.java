@@ -30,7 +30,7 @@ public class Main {
 
             } else if (search == 2) {
 
-                System.out.println("Enter title keyword: ");
+                //System.out.println("Enter title keyword: ");
                 Album ans = inv.findByTitle(scan);
 
                 if(ans != null){

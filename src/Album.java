@@ -72,7 +72,7 @@ public class Album {
 
         String stat = ": is on shelf";
         if (status) {
-            stat = ": is checked out";
+            stat = ": is checked out. Due back before or on March 8, 2017.";
         }
 
         return artist + " " + title + " " + stat;
